@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "types": []
-  }
+    "lib": [ "es2015" ],
+    "paths": {
+      "@/*": [
+       "./*"
+      ]
+     }
+   }
 }
