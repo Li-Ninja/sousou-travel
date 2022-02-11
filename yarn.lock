@@ -129,10 +129,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@hjtech/eslint-config@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@hjtech/eslint-config/-/eslint-config-1.0.6.tgz#c51c5c522992d3dfd1bd870ffc22dcaa6945f03b"
-  integrity sha512-knymh/pnJdUttjZDilv7Hb9AHZA6J6VhLc4+xgCkCRy9QtwdyLPEgyXOIqUzDxsNaq7zYARdw4k5xrTI2H/l5g==
+"@hjtech/eslint-config@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@hjtech/eslint-config/-/eslint-config-1.0.9.tgz#b1735c5b7e8cb7124d20bb2b0727beb0f8be68e6"
+  integrity sha512-DS56KrI6hZvxsUFdowKkfL4Zzw7rPtkLdbvV9h3PGZQT3l7V91JzPjKqhAA1mEwPAQIg/FkfP4WrJ+mXQhlNVQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.21.0"
     "@typescript-eslint/parser" "^4.21.0"
