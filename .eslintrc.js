@@ -46,6 +46,7 @@ module.exports = {
         '@hjtech/eslint-config/import'
       ],
       rules: {
+        'no-undef': 0,
         'import/no-unresolved': 'off',
         'import/named': 'off',
         'import/order': ['error', {'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object']}]
