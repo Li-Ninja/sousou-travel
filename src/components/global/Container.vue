@@ -10,7 +10,7 @@ import MobileMenu from '@/components/global/MobileMenu.vue';
       <div class="hidden lg:block lg:w-[170px] bg-[#13545A]">
         <Menu />
       </div>
-      <div class="flex-auto bg-red-300">
+      <div class="flex-auto">
         <router-view />
       </div>
       <div class="lg:hidden">
