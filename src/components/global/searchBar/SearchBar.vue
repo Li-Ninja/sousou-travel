@@ -45,13 +45,13 @@ function showMenu() {
         :placeholder="$t('common.EnterKeyWord')"
       >
       <span class="absolute w-[2px] h-9 bg-[#CCCCCC] inset-1/2 -translate-x-1/2 -translate-y-1/2" />
+      <SearchBarDropdownMenu
+        v-model="isShow"
+        class="absolute w-full top-20 mt-1"
+      />
     </div>
     <button class="text-2xl font-medium leading-normal px-12 py-3 text-[#FDF6EE] bg-gradient-to-r from-[#EB6522] to-[#F57C2C] rounded-lg">
       {{ $t('common.Search') }}
     </button>
-    <SearchBarDropdownMenu
-      v-model="isShow"
-      class="absolute top-20 mt-1"
-    />
   </div>
 </template>

@@ -49,8 +49,7 @@ function changeSelectedDistrict(key: number | undefined) {
 
 <template>
   <div v-if="localValue">
-    <!-- TODO w-600px 暫時的 -->
-    <div class="relative w-[600px] bg-white rounded-lg pt-3 pb-6 px-8">
+    <div class="relative bg-white rounded-lg pt-3 pb-6 px-8">
       <div
         name="triangle"
         class="
