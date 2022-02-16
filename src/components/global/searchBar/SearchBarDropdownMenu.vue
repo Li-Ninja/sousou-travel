@@ -49,7 +49,11 @@ function changeSelectedDistrict(key: number | undefined) {
 
 <template>
   <div v-if="localValue">
-    <div class="relative bg-white rounded-lg pt-3 pb-6 px-8">
+    <!-- @click.stop can avoid close dropdownMenu when click on menu but didn't click on button -->
+    <div
+      class="relative bg-white rounded-lg pt-3 pb-6 px-8"
+      @click.stop=""
+    >
       <div
         name="triangle"
         class="
@@ -64,7 +68,7 @@ function changeSelectedDistrict(key: number | undefined) {
           :key="area.key"
           class="cursor-pointer ease-out duration-300"
           :class="{'shadow-[0_2px_0_0_rgba(38,166,154,1)]': selectedArea === area.key}"
-          @click="handleSelectedArea(area.key)"
+          @click.stop="handleSelectedArea(area.key)"
         >
           <div class="flex">
             <div class="flex flex-col justify-center justify-items-center">
@@ -86,7 +90,7 @@ function changeSelectedDistrict(key: number | undefined) {
           :key="city.key"
           class="cursor-pointer ease-out duration-300"
           :class="selectedCity === city.key ? 'text-[#26A69A]' : 'text-[#2E2D2C] hover:text-[#498C8C] active:text-[#26A69A]'"
-          @click="changeSelectedCity(city.key)"
+          @click.stop="changeSelectedCity(city.key)"
         >
           <span class="text-2xl leading-normal font-normal">
             {{ city.name }}
@@ -108,7 +112,7 @@ function changeSelectedDistrict(key: number | undefined) {
           <div
             class="cursor-pointer ease-out duration-300 text-xl leading-normal"
             :class="!selectedDistrict ? 'text-[#26A69A]' : 'text-[#2E2D2C] hover:text-[#498C8C] active:text-[#26A69A]'"
-            @click="changeSelectedDistrict(undefined)"
+            @click.stop="changeSelectedDistrict(undefined)"
           >
             {{ $t('area.AllDistrict') }}
           </div>
@@ -117,7 +121,7 @@ function changeSelectedDistrict(key: number | undefined) {
             :key="district.zipCode"
             class="cursor-pointer ease-out duration-300"
             :class="selectedDistrict === district.zipCode ? 'text-[#26A69A]' : 'text-[#2E2D2C] hover:text-[#498C8C] active:text-[#26A69A]'"
-            @click="changeSelectedDistrict(district.zipCode)"
+            @click.stop="changeSelectedDistrict(district.zipCode)"
           >
             <span class="text-xl leading-normal">
               {{ district.name }}
