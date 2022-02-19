@@ -28,7 +28,7 @@ watch(injectShowDropdownMenu, () => {
 </script>
 
 <template>
-  <div class="grid grid-cols-2 relative">
+  <div class="grid grid-cols-2 relative max-w-screen-2xl">
     <div class="relative text-xl leading-snug grid grid-cols-2 mr-8 px-6 py-4 bg-white rounded-lg">
       <div
         class="relative cursor-pointer group"

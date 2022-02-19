@@ -23,7 +23,7 @@ function openDropdownMenu() {
     class="mx-auto h-screen"
     @click="showDropdownMenu && closeDropdownMenu()"
   >
-    <div class="flex flex-col lg:flex-row flex-wrap h-full">
+    <div class="flex flex-col lg:flex-row  h-full">
       <div class="hidden lg:block lg:w-[170px] bg-[#13545A]">
         <Menu />
       </div>
