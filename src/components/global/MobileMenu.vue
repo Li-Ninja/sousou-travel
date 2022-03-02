@@ -13,7 +13,7 @@ function toThePage(key: MenuKeyEnum) {
 </script>
 
 <template>
-  <div class="flex flex-row">
+  <div class="flex flex-row max-h-[60px]">
     <div
       v-for="menu in mobileMenuList"
       :key="menu.key"

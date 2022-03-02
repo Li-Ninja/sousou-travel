@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import SearchBar from '@/components/global/searchBar/SearchBar.vue';
-
+// script
 </script>
 
 <template>
   <div>
-    <div class="text-white mb-[72px]">
-      <div class="text-5xl font-bold leading-normal mb-2 lg:mb-6 ">
+    <div class="text-white">
+      <div class="text-3xl lg:text-5xl font-bold leading-normal mb-2 lg:mb-6 ">
         {{ $t('common.HeaderTitle') }}
       </div>
-      <div class="text-[34px] font-medium leading-snug">
+      <div class="text-xl lg:text-[34px] font-medium leading-snug">
         <div>
           {{ $t('common.HeaderContent1') }}
         </div>
@@ -18,6 +17,5 @@ import SearchBar from '@/components/global/searchBar/SearchBar.vue';
         </div>
       </div>
     </div>
-    <SearchBar />
   </div>
 </template>

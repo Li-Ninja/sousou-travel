@@ -1,21 +1,36 @@
 <script setup lang="ts">
-import Header from '@/components/global/Header.vue';
+import TopContent from '@/components/global/TopContent.vue';
 import Recommend from '@/components/home/Recommend.vue';
 import About from '@/components/home/About.vue';
+import SearchBar from '@/components/global/searchBar/SearchBar.vue';
 
 </script>
 
 <template>
-  <div class="h-full">
-    <div class="h-full p-5 lg:p-24 lg:pb-14">
+  <div class="h-full relative">
+    <!-- desktop -->
+    <div class="hidden lg:block h-full p-24 pb-14">
       <div class="h-full relative">
-        <Header />
+        <TopContent class="mb-[72px]" />
+        <SearchBar />
         <div class="absolute bottom-0 left-0 right-0 lg:flex">
-          <Recommend class="lg:flex-auto" />
+          <Recommend class="lex-auto mr-6" />
           <About class="hidden lg:block flex-auto" />
         </div>
       </div>
     </div>
+
+    <!-- mobile -->
+    <div class="block lg:hidden h-full px-5 py-7">
+      <div class="flex justify-center text-white text-5xl mb-7">
+        SOUSOÜ
+      </div>
+      <Recommend class="mb-8" />
+      <TopContent class="mb-8" />
+      <SearchBar />
+    </div>
+
+    <!-- background image -->
     <div class="h-full absolute top-0 inset-x-0 bg-cover bg-center bg-no-repeat bg-black/50 -z-10" />
     <div
       class="h-full absolute top-0 inset-x-0 bg-cover bg-center bg-no-repeat -z-20"
