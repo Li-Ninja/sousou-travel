@@ -207,67 +207,68 @@ const keelungDistrictList: District[] = [
 
 const yilanCountyDistrictList: District[] = [
   {
-    name: t('district.Yilan.YilanCity'),
+    name: t('district.YilanCounty.YilanCity'),
     zipCode: 260
   },
   {
-    name: t('district.Yilan.TouchengTownship'),
+    name: t('district.YilanCounty.TouchengTownship'),
     zipCode: 261
   },
   {
-    name: t('district.Yilan.JiaoxiTownship'),
+    name: t('district.YilanCounty.JiaoxiTownship'),
     zipCode: 262
   },
   {
-    name: t('district.Yilan.ZhuangweiTownship'),
+    name: t('district.YilanCounty.ZhuangweiTownship'),
     zipCode: 263
   },
   {
-    name: t('district.Yilan.YuanshanTownship'),
+    name: t('district.YilanCounty.YuanshanTownship'),
     zipCode: 264
   },
   {
-    name: t('district.Yilan.LuodongTownship'),
+    name: t('district.YilanCounty.LuodongTownship'),
     zipCode: 265
   },
   {
-    name: t('district.Yilan.SanxingTownship'),
+    name: t('district.YilanCounty.SanxingTownship'),
     zipCode: 266
   },
   {
-    name: t('district.Yilan.DatongTownship'),
+    name: t('district.YilanCounty.DatongTownship'),
     zipCode: 267
   },
   {
-    name: t('district.Yilan.WujieTownship'),
+    name: t('district.YilanCounty.WujieTownship'),
     zipCode: 268
   },
   {
-    name: t('district.Yilan.DongshanTownship'),
+    name: t('district.YilanCounty.DongshanTownship'),
     zipCode: 269
   },
   {
-    name: t('district.Yilan.SuAoTownship'),
+    name: t('district.YilanCounty.SuAoTownship'),
     zipCode: 270
   },
   {
-    name: t('district.Yilan.NanAoTownship'),
+    name: t('district.YilanCounty.NanAoTownship'),
     zipCode: 272
   }
 ];
 
+// there true zipCode all are 300
 const hsinchuDistrictList: District[] = [
   {
     name: t('district.Hsinchu.EastDist'),
-    zipCode: 300
+    zipCode: 3001
   },
   {
     name: t('district.Hsinchu.NorthDist'),
-    zipCode: 300
+    zipCode: 3002
   },
   {
     name: t('district.Hsinchu.XiangshanDist'),
-    zipCode: 300
+    zipCode: 3003
   }
 ];
 
