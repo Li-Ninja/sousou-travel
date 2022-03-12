@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<{
 }>(), {
   modelValue: false
 });
-const emits = defineEmits(['update:modelValue']);
+const emits = defineEmits(['update:modelValue', 'update-city']);
 
 const isShow = shallowRef(props.modelValue);
 
@@ -53,6 +53,12 @@ const selectedDistrict: ShallowRef<number | undefined> = shallowRef(theCityDistr
 
 function changeSelectedDistrict(key = theCityDistrictList.value[0]?.zipCode) {
   selectedDistrict.value = key;
+}
+
+/** confirm button */
+function onConfirm() {
+  emits('update-city', selectedCity.value ?? '');
+  isShow.value = false;
 }
 
 </script>
@@ -106,6 +112,7 @@ function changeSelectedDistrict(key = theCityDistrictList.value[0]?.zipCode) {
         <button
           class="w-full lg:w-auto text-2xl font-medium leading-normal px-12 py-3
         text-[#FDF6EE] bg-gradient-to-r from-dark-orange to-accent rounded-lg"
+          @click="onConfirm"
         >
           {{ $t('common.Confirm') }}
         </button>

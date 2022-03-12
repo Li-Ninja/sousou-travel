@@ -1,10 +1,15 @@
 <script lang="ts" setup>
-import { inject, ref, watch, shallowRef, ShallowRef } from 'vue';
+import { inject, ref, watch, shallowRef, ShallowRef, Ref } from 'vue';
 import SearchBarDropdownMenu from './SearchBarDropdownMenu.vue';
 import SearchBarDropdownMobileMenu from './SearchBarDropdownMobileMenu.vue';
+import { CityEnum } from '@/enum/area.enum';
 
-const searchData = ref({
-  city: undefined
+const searchData: Ref<{
+  city?: CityEnum
+  zipCode?: number
+}> = ref({
+  city: undefined,
+  zipCode: undefined
 });
 
 const showDropdownMenu = shallowRef(false);
@@ -26,6 +31,11 @@ watch(injectShowDropdownMenu, () => {
   showDropdownMenu.value = injectShowDropdownMenu.value;
 });
 
+function updateCity(city: CityEnum | undefined, zipCode: number) {
+  searchData.value.city = city;
+  searchData.value.zipCode = zipCode;
+}
+
 </script>
 
 <template>
@@ -36,11 +46,23 @@ watch(injectShowDropdownMenu, () => {
         class="relative cursor-pointer group"
         @click.stop="updateShowDropdownMenu()"
       >
-        <div class="text-grey-3">
-          <span v-if="searchData.city">
-            {{ searchData.city }}
+        <div>
+          <span
+            v-if="searchData.city"
+            class="text-dark"
+          >
+            {{ $t(`area.City.${searchData.city}`) }} ,
+            <template v-if="searchData.zipCode">
+              {{ $t(`district.${searchData.city}.${searchData.zipCode}`) }}
+            </template>
+            <template v-else>
+              {{ $t('area.AllDistrict') }}
+            </template>
           </span>
-          <span v-else>
+          <span
+            v-else
+            class="text-grey-3"
+          >
             {{ $t('common.IWantToGo') }}
           </span>
         </div>
@@ -61,6 +83,7 @@ watch(injectShowDropdownMenu, () => {
       <SearchBarDropdownMenu
         v-model="showDropdownMenu"
         class="absolute w-full top-20 mt-1"
+        @update-city="updateCity"
       />
     </div>
     <!-- mobile search block -->
@@ -69,11 +92,17 @@ watch(injectShowDropdownMenu, () => {
       @click.stop="updateShowDropdownMenu()"
     >
       <div class="relative group">
-        <div class="text-grey-3">
-          <span v-if="searchData.city">
-            {{ searchData.city }}
+        <div>
+          <span
+            v-if="searchData.city"
+            class="text-dark"
+          >
+            {{ $t(`area.City.${searchData.city}`) }}
           </span>
-          <span v-else>
+          <span
+            v-else
+            class="text-grey-3"
+          >
             {{ $t('common.IWantToGo') }}
           </span>
         </div>
@@ -85,7 +114,10 @@ watch(injectShowDropdownMenu, () => {
           style="mask-image: url('src/assets/ionicon_svg/caret-down-outline.svg')"
         />
       </div>
-      <SearchBarDropdownMobileMenu v-model="showDropdownMenu" />
+      <SearchBarDropdownMobileMenu
+        v-model="showDropdownMenu"
+        @update-city="updateCity"
+      />
     </div>
     <!-- search button -->
     <div>

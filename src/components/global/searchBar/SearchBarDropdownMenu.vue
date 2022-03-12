@@ -9,16 +9,16 @@ const props = withDefaults(defineProps<{
 }>(), {
   modelValue: false
 });
-const emits = defineEmits(['update:modelValue']);
+const emits = defineEmits(['update:modelValue', 'update-city']);
 
-const localValue = shallowRef(props.modelValue);
+const isShow = shallowRef(props.modelValue);
 
 watch(() => props.modelValue, (val: boolean) => {
-  localValue.value = val;
+  isShow.value = val;
 });
 
-watch(() => localValue.value, () => {
-  emits('update:modelValue', localValue.value);
+watch(() => isShow.value, () => {
+  emits('update:modelValue', isShow.value);
 });
 
 /** selected area */
@@ -41,14 +41,16 @@ function changeSelectedCity(key: CityEnum | undefined) {
 const selectedDistrict: ShallowRef<number | undefined> = shallowRef(undefined);
 const theCityDistrictList = computed(() => districtList.find(district => district.key === selectedCity.value)?.list || []);
 
-function changeSelectedDistrict(key: number | undefined) {
+function handleSelectedDistrict(key: number | undefined) {
   selectedDistrict.value = key;
+  emits('update-city', selectedCity.value ?? undefined, selectedDistrict.value ?? undefined);
+  isShow.value = false;
 }
 
 </script>
 
 <template>
-  <div v-if="localValue">
+  <div v-if="isShow">
     <!-- @click.stop can avoid close dropdownMenu when click on menu but didn't click on button -->
     <div
       class="relative bg-white rounded-lg pt-3 pb-6 px-8"
@@ -112,7 +114,7 @@ function changeSelectedDistrict(key: number | undefined) {
           <div
             class="cursor-pointer ease-out duration-300 text-xl leading-normal"
             :class="!selectedDistrict ? 'text-[#26A69A]' : 'text-[#2E2D2C] hover:text-[#498C8C] active:text-[#26A69A]'"
-            @click.stop="changeSelectedDistrict(undefined)"
+            @click.stop="handleSelectedDistrict(undefined)"
           >
             {{ $t('area.AllDistrict') }}
           </div>
@@ -121,7 +123,7 @@ function changeSelectedDistrict(key: number | undefined) {
             :key="district.zipCode"
             class="cursor-pointer ease-out duration-300"
             :class="selectedDistrict === district.zipCode ? 'text-[#26A69A]' : 'text-[#2E2D2C] hover:text-[#498C8C] active:text-[#26A69A]'"
-            @click.stop="changeSelectedDistrict(district.zipCode)"
+            @click.stop="handleSelectedDistrict(district.zipCode)"
           >
             <span class="text-xl leading-normal">
               {{ district.name }}
