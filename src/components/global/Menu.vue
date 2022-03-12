@@ -14,7 +14,10 @@ function toThePage(key: MenuKeyEnum) {
 
 <template>
   <div>
-    <div class="h-[360px] bg-[#FDF6EE] flex justify-center items-center">
+    <div
+      class="h-[360px] bg-[#FDF6EE] flex justify-center items-center cursor-pointer"
+      @click="toThePage(MenuKeyEnum.Home)"
+    >
       <img
         src="/src/assets/logo.svg"
         alt="SouSou logo"
