@@ -12,7 +12,7 @@ import SearchBar from '@/components/global/searchBar/SearchBar.vue';
     <div class="hidden lg:block h-full p-24 pb-14">
       <div class="h-full relative">
         <TopContent class="mb-[72px]" />
-        <SearchBar />
+        <SearchBar class="absolute z-10" />
         <div class="absolute bottom-0 left-0 right-0 lg:flex">
           <Recommend class="lex-auto mr-6" />
           <About class="hidden lg:block flex-auto" />

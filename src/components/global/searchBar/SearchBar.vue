@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { inject, ref, watch, shallowRef, ShallowRef } from 'vue';
 import SearchBarDropdownMenu from './SearchBarDropdownMenu.vue';
+import SearchBarDropdownMobileMenu from './SearchBarDropdownMobileMenu.vue';
 
 const searchData = ref({
   city: undefined
@@ -84,14 +85,11 @@ watch(injectShowDropdownMenu, () => {
           style="mask-image: url('src/assets/ionicon_svg/caret-down-outline.svg')"
         />
       </div>
-      <SearchBarDropdownMenu
-        v-model="showDropdownMenu"
-        class="absolute w-full top-20 mt-1"
-      />
+      <SearchBarDropdownMobileMenu v-model="showDropdownMenu" />
     </div>
     <!-- search button -->
     <div>
-      <button class="w-full lg:w-auto text-2xl font-medium leading-normal px-12 py-3 text-[#FDF6EE] bg-gradient-to-r from-[#EB6522] to-[#F57C2C] rounded-lg">
+      <button class="w-full lg:w-auto text-2xl font-medium leading-normal px-12 py-3 text-[#FDF6EE] bg-gradient-to-r from-dark-orange to-accent rounded-lg">
         {{ $t('common.Search') }}
       </button>
     </div>

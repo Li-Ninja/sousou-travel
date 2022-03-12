@@ -1,9 +1,10 @@
 import { useI18n } from '@/makers/i18n.maker';
+import { District } from '@/types/common';
 import { CityEnum } from '@/enum/area.enum';
 
 const { t } = useI18n();
 
-const taipeiDistrictList = [
+const taipeiDistrictList: District[] = [
   {
     name: t('district.Taipei.ZhongzhengDist'),
     zipCode: 100
@@ -54,7 +55,7 @@ const taipeiDistrictList = [
   }
 ];
 
-const newTaipeiDistrictList = [
+const newTaipeiDistrictList: District[] = [
   {
     name: t('district.NewTaipei.WanliDist'),
     zipCode: 207
@@ -173,7 +174,7 @@ const newTaipeiDistrictList = [
   }
 ];
 
-const keelungDistrictList = [
+const keelungDistrictList: District[] = [
   {
     name: t('district.Keelung.RenAiDist'),
     zipCode: 200
@@ -204,7 +205,7 @@ const keelungDistrictList = [
   }
 ];
 
-const yilanCountyDistrictList = [
+const yilanCountyDistrictList: District[] = [
   {
     name: t('district.Yilan.YilanCity'),
     zipCode: 260
@@ -255,7 +256,7 @@ const yilanCountyDistrictList = [
   }
 ];
 
-const hsinchuDistrictList = [
+const hsinchuDistrictList: District[] = [
   {
     name: t('district.Hsinchu.EastDist'),
     zipCode: 300
@@ -270,7 +271,7 @@ const hsinchuDistrictList = [
   }
 ];
 
-const hsinchuCountyDistrictList = [
+const hsinchuCountyDistrictList: District[] = [
   {
     name: t('district.HsinchuCounty.ZhubeiCity'),
     zipCode:	302
@@ -325,7 +326,7 @@ const hsinchuCountyDistrictList = [
   }
 ];
 
-const taoyuanDistrictList = [
+const taoyuanDistrictList: District[] = [
   {
     name: t('district.Taoyuan.ZhongliDist'),
     zipCode: 320

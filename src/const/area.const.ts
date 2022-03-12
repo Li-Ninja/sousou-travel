@@ -1,9 +1,10 @@
 import { useI18n } from '@/makers/i18n.maker';
 import { CityEnum, DirectionEnum } from '@/enum/area.enum';
+import { Area, City } from '@/types/common';
 
 const { t } = useI18n();
 
-const northCityList = [
+const northCityList: City[] = [
   CityEnum.Taipei,
   CityEnum.NewTaipei,
   CityEnum.Keelung,
@@ -17,7 +18,7 @@ const northCityList = [
   name: t(`area.City.${city}`)
 }));
 
-const eastCityList = [
+const eastCityList: City[] = [
   CityEnum.TaitungCounty,
   CityEnum.HualienCounty
 ].map(city => ({
@@ -26,7 +27,7 @@ const eastCityList = [
   name: t(`area.City.${city}`)
 }));
 
-const middleCityList = [
+const middleCityList: City[] = [
   CityEnum.Taichung,
   CityEnum.MiaoliCounty,
   CityEnum.ChanghuaCounty,
@@ -38,7 +39,7 @@ const middleCityList = [
   name: t(`area.City.${city}`)
 }));
 
-const southCityList = [
+const southCityList: City[] = [
   CityEnum.Kaohsiung,
   CityEnum.Tainan,
   CityEnum.Chiayi,
@@ -50,7 +51,7 @@ const southCityList = [
   name: t(`area.City.${city}`)
 }));
 
-const islandCityList = [
+const islandCityList: City[] = [
   CityEnum.PenghuCounty,
   CityEnum.KinmenCounty,
   CityEnum.LienchiangCounty,
@@ -61,7 +62,7 @@ const islandCityList = [
   name: t(`area.City.${city}`)
 }));
 
-export const areaList = [
+export const areaList: Area[] = [
   {
     key: DirectionEnum.North,
     name: t('area.Direction.North'),
