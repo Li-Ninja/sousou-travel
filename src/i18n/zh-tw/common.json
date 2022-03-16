@@ -6,5 +6,8 @@
   "HeaderContent2": "Let's get a nice travel !",
   "EnterKeyWord": "輸入關鍵字",
   "IWantToGo": "我想去 ...",
-  "Confirm": "確定"
+  "Confirm": "確定",
+  "RecommendSpot": "推薦景點",
+  "RecommendRestaurant": "推薦美食",
+  "RecommendHotel": "推薦旅宿"
 }

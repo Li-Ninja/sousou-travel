@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { computed, shallowRef } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { RecommendEnum } from '@/enum/common.enum';
+
+const { t } = useI18n();
 
 const recommendList = [
   {
-    name: '推薦景點',
+    name: t('common.RecommendSpot'),
     key: RecommendEnum.Spot,
     list: [
       {
@@ -40,7 +43,7 @@ const recommendList = [
     ]
   },
   {
-    name: '推薦美式',
+    name: t('common.RecommendRestaurant'),
     key: RecommendEnum.Restaurant,
     list: [
       {
@@ -76,7 +79,7 @@ const recommendList = [
     ]
   },
   {
-    name: '推薦旅宿',
+    name: t('common.RecommendHotel'),
     key: RecommendEnum.Hotel,
     list: [
       {

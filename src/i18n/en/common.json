@@ -6,5 +6,8 @@
   "HeaderContent2": "Let's get a nice travel !",
   "EnterKeyWord": "Enter key word",
   "IWantToGo": "I want to go ...",
-  "Confirm": "Confirm"
+  "Confirm": "Confirm",
+  "RecommendSpot": "Recommend spot",
+  "RecommendRestaurant": "Recommend restaurant",
+  "RecommendHotel": "Recommend hotel"
 }
