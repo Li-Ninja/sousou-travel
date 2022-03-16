@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const spacing = require('tailwindcss/defaultTheme').spacing;
 
 module.exports = {
   content: [
@@ -20,6 +21,10 @@ module.exports = {
       'cyan-4': '#26A69A',
       'dark-orange': '#EB6522',
       'light-orange': '#FDF6EE'
+    },
+    spacing: {
+      ...spacing,
+      '18': '4.5rem'
     }
   },
   plugins: []
