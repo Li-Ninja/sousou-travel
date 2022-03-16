@@ -85,11 +85,11 @@ function onConfirm() {
             <div class="flex justify-center">
               <div class="flex flex-col justify-center justify-items-center">
                 <div
-                  class="bg-[#2E2D2C] w-6 h-6 inline-block mr-1"
+                  class="bg-dark w-6 h-6 inline-block mr-1"
                   style="mask-image: url('src/assets/ionicon_svg/location-outline.svg')"
                 />
               </div>
-              <span class="text-2xl leading-normal text-[#2E2D2C]">
+              <span class="text-2xl leading-normal text-dark">
                 {{ area.name }}
               </span>
             </div>
@@ -111,7 +111,7 @@ function onConfirm() {
 
         <button
           class="w-full lg:w-auto text-2xl font-medium leading-normal px-12 py-3
-        text-[#FDF6EE] bg-gradient-to-r from-dark-orange to-accent rounded-lg"
+        text-light-orange bg-gradient-to-r from-dark-orange to-accent rounded-lg"
           @click="onConfirm"
         >
           {{ $t('common.Confirm') }}

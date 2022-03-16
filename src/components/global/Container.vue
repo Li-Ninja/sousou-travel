@@ -24,7 +24,7 @@ function openDropdownMenu() {
     @click="showDropdownMenu && closeDropdownMenu()"
   >
     <div class="flex flex-col lg:flex-row h-full">
-      <div class="hidden lg:block lg:w-[170px] bg-[#13545A]">
+      <div class="hidden lg:block lg:w-[170px] bg-primary">
         <Menu />
       </div>
       <div class="flex-auto pb-[60px] lg:pb-0">

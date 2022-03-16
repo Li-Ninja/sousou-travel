@@ -121,7 +121,7 @@ function updateCity(city: CityEnum | undefined, zipCode: number) {
     </div>
     <!-- search button -->
     <div>
-      <button class="w-full lg:w-auto text-2xl font-medium leading-normal px-12 py-3 text-[#FDF6EE] bg-gradient-to-r from-dark-orange to-accent rounded-lg">
+      <button class="w-full lg:w-auto text-2xl font-medium leading-normal px-12 py-3 text-light-orange bg-gradient-to-r from-dark-orange to-accent rounded-lg">
         {{ $t('common.Search') }}
       </button>
     </div>

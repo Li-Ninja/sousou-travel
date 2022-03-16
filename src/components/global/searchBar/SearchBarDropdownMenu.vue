@@ -75,11 +75,11 @@ function handleSelectedDistrict(key: number | undefined) {
           <div class="flex">
             <div class="flex flex-col justify-center justify-items-center">
               <div
-                class="bg-[#2E2D2C] w-6 h-6 inline-block mr-1"
+                class="bg-dark w-6 h-6 inline-block mr-1"
                 style="mask-image: url('src/assets/ionicon_svg/location-outline.svg')"
               />
             </div>
-            <span class="text-2xl leading-normal text-[#2E2D2C]">
+            <span class="text-2xl leading-normal text-dark">
               {{ area.name }}
             </span>
           </div>
@@ -91,7 +91,7 @@ function handleSelectedDistrict(key: number | undefined) {
           v-for="city in cityList"
           :key="city.key"
           class="cursor-pointer ease-out duration-300"
-          :class="selectedCity === city.key ? 'text-[#26A69A]' : 'text-[#2E2D2C] hover:text-[#498C8C] active:text-[#26A69A]'"
+          :class="selectedCity === city.key ? 'text-secondary' : 'text-dark hover:text-primary-hover active:text-secondary'"
           @click.stop="changeSelectedCity(city.key)"
         >
           <span class="text-2xl leading-normal font-normal">
@@ -102,18 +102,18 @@ function handleSelectedDistrict(key: number | undefined) {
       <!-- district -->
       <div>
         <div class="inline-flex items-center mb-2">
-          <div class="text-[#26A69A] text-base m-1">
+          <div class="text-secondary text-base m-1">
             {{ $t('area.TheCityDistrict') }}
           </div>
           <div
-            class="w-5 h-5 bg-[#26A69A]"
+            class="w-5 h-5 bg-secondary"
             style="mask-image: url('src/assets/ionicon_svg/caret-down-outline.svg')"
           />
         </div>
         <div class="grid grid-cols-5 gap-4 bg-[#F7F7F7] p-6 rounded-lg">
           <div
             class="cursor-pointer ease-out duration-300 text-xl leading-normal"
-            :class="!selectedDistrict ? 'text-[#26A69A]' : 'text-[#2E2D2C] hover:text-[#498C8C] active:text-[#26A69A]'"
+            :class="!selectedDistrict ? 'text-secondary' : 'text-dark hover:text-primary-hover active:text-secondary'"
             @click.stop="handleSelectedDistrict(undefined)"
           >
             {{ $t('area.AllDistrict') }}
@@ -122,7 +122,7 @@ function handleSelectedDistrict(key: number | undefined) {
             v-for="district in theCityDistrictList"
             :key="district.zipCode"
             class="cursor-pointer ease-out duration-300"
-            :class="selectedDistrict === district.zipCode ? 'text-[#26A69A]' : 'text-[#2E2D2C] hover:text-[#498C8C] active:text-[#26A69A]'"
+            :class="selectedDistrict === district.zipCode ? 'text-secondary' : 'text-dark hover:text-primary-hover active:text-secondary'"
             @click.stop="handleSelectedDistrict(district.zipCode)"
           >
             <span class="text-xl leading-normal">
