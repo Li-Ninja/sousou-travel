@@ -53,7 +53,7 @@ function handleSelectedDistrict(key: number | undefined) {
   <div v-if="isShow">
     <!-- @click.stop can avoid close dropdownMenu when click on menu but didn't click on button -->
     <div
-      class="relative bg-white rounded-lg pt-3 pb-6 px-8"
+      class="relative bg-white rounded-lg pt-3 pb-6 px-8 w-[736px]"
       @click.stop=""
     >
       <div
