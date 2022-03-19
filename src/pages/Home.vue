@@ -51,13 +51,17 @@ function changeLanguage() {
     </div>
 
     <!-- mobile -->
-    <div class="block lg:hidden h-full px-5 py-7">
+    <div class="flex flex-col justify-between lg:hidden h-full px-5 py-7">
       <div class="flex justify-center text-white text-5xl mb-12">
         SOUSOÜ
       </div>
-      <Recommend class="mb-8" />
-      <TopContent class="mb-8" />
-      <SearchBar />
+      <div class="grow mb-8 flex flex-col justify-center">
+        <Recommend />
+      </div>
+      <div>
+        <TopContent class="mb-8" />
+        <SearchBar />
+      </div>
     </div>
 
     <!-- background image -->
