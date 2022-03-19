@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TopContent from '@/components/global/TopContent.vue';
+import Carousel from '@/components/global/Carousel.vue';
 import Recommend from '@/components/home/Recommend.vue';
 import About from '@/components/home/About.vue';
 import SearchBar from '@/components/global/searchBar/SearchBar.vue';
@@ -51,7 +52,7 @@ function changeLanguage() {
 
     <!-- mobile -->
     <div class="block lg:hidden h-full px-5 py-7">
-      <div class="flex justify-center text-white text-5xl mb-7">
+      <div class="flex justify-center text-white text-5xl mb-12">
         SOUSOÜ
       </div>
       <Recommend class="mb-8" />
@@ -60,10 +61,6 @@ function changeLanguage() {
     </div>
 
     <!-- background image -->
-    <div class="h-full fixed inset-0 bg-cover bg-center bg-no-repeat bg-black/50 -z-10" />
-    <div
-      class="h-full fixed inset-0 bg-cover bg-center bg-no-repeat -z-20"
-      :style="{backgroundImage: `url('src/assets/banner/1.jpg')`}"
-    />
+    <Carousel />
   </div>
 </template>
