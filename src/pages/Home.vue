@@ -36,13 +36,15 @@ function changeLanguage() {
     />
 
     <!-- desktop -->
-    <div class="hidden lg:block h-full p-24 pb-14">
-      <div class="h-full relative">
-        <TopContent class="mb-[72px]" />
-        <SearchBar class="absolute z-10" />
-        <div class="absolute bottom-0 left-0 right-0 lg:flex">
-          <Recommend class="lex-auto mr-6" />
-          <About class="hidden lg:block flex-auto" />
+    <div class="hidden lg:block h-full p-12 xl:p-24 pb-14">
+      <div class="h-full relative flex flex-col justify-between">
+        <div class="mb-12">
+          <TopContent class="mb-[72px]" />
+          <SearchBar class="absolute z-10" />
+        </div>
+        <div class="flex justify-between">
+          <Recommend class="mr-12" />
+          <About class="mr-14 xl:mr-24" />
         </div>
       </div>
     </div>
