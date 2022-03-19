@@ -13,22 +13,22 @@ function toThePage(key: MenuKeyEnum) {
 </script>
 
 <template>
-  <div class="flex flex-row">
+  <div class="flex flex-row max-h-[60px]">
     <div
       v-for="menu in mobileMenuList"
       :key="menu.key"
       class="flex flex-col grow justify-center items-center group
-      bg-[#13545A] h-[60px] border-b border-[#5A8C8C] cursor-pointer"
+      bg-primary h-[60px] border-b border-primary-hover cursor-pointer"
       @click="toThePage(menu.key)"
     >
       <div
-        class="h-6 w-6 mb-1 bg-[#5a8886] ease-out duration-300"
+        class="h-6 w-6 mb-1 bg-green-1 ease-out duration-300"
         :style="{maskImage: `url('${menu.icon}')`}"
-        :class="[menu.key === route.name ? 'bg-[#26A69A]' : 'group-hover:bg-[#498C8C] group-active:bg-[#26A69A]']"
+        :class="[menu.key === route.name ? 'bg-secondary' : 'group-hover:bg-primary-hover group-active:bg-secondary']"
       />
       <h2
-        class="text-[#5a8886] text-xs ease-out duration-300"
-        :class="[menu.key === route.name ? 'text-[#26A69A]' : 'group-hover:text-[#498C8C] group-active:text-[#26A69A]']"
+        class="text-green-1 text-xs ease-out duration-300"
+        :class="[menu.key === route.name ? 'text-secondary' : 'group-hover:text-primary-hover group-active:text-secondary']"
       >
         {{ menu.name }}
       </h2>

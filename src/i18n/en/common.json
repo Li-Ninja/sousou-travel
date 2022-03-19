@@ -1,4 +1,13 @@
 {
   "Search": "SOÜ Search",
-  "SearchResult": "Search result"
+  "SearchResult": "Search result",
+  "HeaderTitle": "Where do you want to go this time?",
+  "HeaderContent1": "SOÜ takes you to every corner of Formosa...",
+  "HeaderContent2": "Let's get a nice travel !",
+  "EnterKeyWord": "Enter key word",
+  "IWantToGo": "I want to go ...",
+  "Confirm": "Confirm",
+  "RecommendSpot": "Recommend spot",
+  "RecommendRestaurant": "Recommend restaurant",
+  "RecommendHotel": "Recommend hotel"
 }

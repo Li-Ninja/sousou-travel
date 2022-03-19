@@ -16,6 +16,11 @@ const routes: Array<RouteRecordRaw> = [
     redirect: { name: MenuKeyEnum.Home },
     children: [
       {
+        path: '',
+        name: MenuKeyEnum.Home,
+        component: Home
+      },
+      {
         path: MenuKeyEnum.Home.toLowerCase(),
         name: MenuKeyEnum.Home,
         component: Home
