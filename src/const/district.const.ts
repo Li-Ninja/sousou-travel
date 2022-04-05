@@ -1,5 +1,5 @@
 import { useI18n } from '@/makers/i18n.maker';
-import { District } from '@/types/common';
+import { District, CityDistrict } from '@/types/common';
 import { CityEnum } from '@/enum/area.enum';
 
 const { t } = useI18n();
@@ -383,9 +383,27 @@ const taoyuanDistrictList: District[] = [
 
 ];
 
-// TODO 建立其他縣市的 district
+// TODO fill another city's district
+const hsinchuList: District[] = [];
+const hsinchuCountyList: District[] = [];
+const yilanCountyList: District[] = [];
+const miaoliCountyList: District[] = [];
+const taichungList: District[] = [];
+const changhuaCountyList: District[] = [];
+const nantouCountyList: District[] = [];
+const yunlinCountyList: District[] = [];
+const chiayiList: District[] = [];
+const chiayiCountyList: District[] = [];
+const tainanList: District[] = [];
+const kaohsiungList: District[] = [];
+const pingtungCountyList: District[] = [];
+const penghuCountyList: District[] = [];
+const hualienCountyList: District[] = [];
+const taitungCountyList: District[] = [];
+const kinmenCountyList: District[] = [];
+const lienchiangCountyList: District[] = [];
 
-export const districtList = [
+export const districtList: CityDistrict[] = [
   {
     key: CityEnum.Taipei,
     list: taipeiDistrictList
@@ -413,5 +431,83 @@ export const districtList = [
   {
     key: CityEnum.Taoyuan,
     list: taoyuanDistrictList
+  },
+  {
+    key: CityEnum.Hsinchu,
+    list: hsinchuList
+  },
+  {
+    key: CityEnum.HsinchuCounty,
+    list: hsinchuCountyList
+  },
+  {
+    key: CityEnum.YilanCounty,
+    list: yilanCountyList
+  },
+  {
+    key: CityEnum.MiaoliCounty,
+    list: miaoliCountyList
+  },
+  {
+    key: CityEnum.Taichung,
+    list: taichungList
+  },
+  {
+    key: CityEnum.ChanghuaCounty,
+    list: changhuaCountyList
+  },
+  {
+    key: CityEnum.NantouCounty,
+    list: nantouCountyList
+  },
+  {
+    key: CityEnum.YunlinCounty,
+    list: yunlinCountyList
+  },
+  {
+    key: CityEnum.Chiayi,
+    list: chiayiList
+  },
+  {
+    key: CityEnum.ChiayiCounty,
+    list: chiayiCountyList
+  },
+  {
+    key: CityEnum.Tainan,
+    list: tainanList
+  },
+  {
+    key: CityEnum.Kaohsiung,
+    list: kaohsiungList
+  },
+  {
+    key: CityEnum.PingtungCounty,
+    list: pingtungCountyList
+  },
+  {
+    key: CityEnum.PenghuCounty,
+    list: penghuCountyList
+  },
+  {
+    key: CityEnum.HualienCounty,
+    list: hualienCountyList
+  },
+  {
+    key: CityEnum.TaitungCounty,
+    list: taitungCountyList
+  },
+  {
+    key: CityEnum.KinmenCounty,
+    list: kinmenCountyList
+  },
+  {
+    key: CityEnum.LienchiangCounty,
+    list: lienchiangCountyList
   }
 ];
+
+export const districtDict = districtList.reduce((acc, pre) => {
+  acc[pre.key] = pre;
+
+  return acc;
+}, {} as Record<CityEnum, CityDistrict>);

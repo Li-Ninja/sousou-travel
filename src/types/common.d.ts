@@ -16,3 +16,8 @@ interface District {
   name: string;
   zipCode: number;
 }
+
+interface CityDistrict {
+  key: City['key'];
+  list: District[]
+}

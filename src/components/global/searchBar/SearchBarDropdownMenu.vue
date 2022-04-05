@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, shallowRef, watch, ShallowRef } from 'vue';
-import { areaList } from '@/const/area.const';
-import { districtList } from '@/const/district.const';
+import { areaList, areaDict } from '@/const/area.const';
+import { districtDict } from '@/const/district.const';
 import { CityEnum, DirectionEnum } from '@/enum/area.enum';
 
 const props = withDefaults(defineProps<{
@@ -26,20 +26,20 @@ const selectedArea = shallowRef(DirectionEnum.North);
 
 function handleSelectedArea(key: DirectionEnum) {
   selectedArea.value = key;
-  changeSelectedCity(areaList.find(area => area.key === selectedArea.value)?.list[0]?.key);
+  changeSelectedCity(areaDict[selectedArea.value].list[0].key);
 }
 
 /** selected city */
-const selectedCity: ShallowRef<CityEnum | undefined> = shallowRef(areaList[0]?.list[0]?.key);
-const cityList = computed(() => areaList.find(area => area.key === selectedArea.value)?.list || []);
+const selectedCity: ShallowRef<CityEnum> = shallowRef(areaDict['North'].list[0].key);
+const cityList = computed(() => areaDict[selectedArea.value].list);
 
-function changeSelectedCity(key: CityEnum | undefined) {
+function changeSelectedCity(key: CityEnum) {
   selectedCity.value = key;
 }
 
 /** selected district */
 const selectedDistrict: ShallowRef<number | undefined> = shallowRef(undefined);
-const theCityDistrictList = computed(() => districtList.find(district => district.key === selectedCity.value)?.list || []);
+const theCityDistrictList = computed(() => districtDict[selectedCity.value].list);
 
 function handleSelectedDistrict(key: number | undefined) {
   selectedDistrict.value = key;

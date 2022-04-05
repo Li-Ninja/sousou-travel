@@ -89,3 +89,9 @@ export const areaList: Area[] = [
     list: islandCityList
   }
 ];
+
+export const areaDict = areaList.reduce((acc, curr) => {
+  acc[curr.key] = curr;
+
+  return acc;
+}, {} as Record<DirectionEnum, Area>);
