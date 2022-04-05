@@ -14,7 +14,7 @@ function getImageUrl() {
 
 (function autoChangeImage() {
   setTimeout(() => {
-    changeImage(image.value === imageList.value.length ? imageList.value[0] : ++image.value);
+    changeImage(++image.value % imageList.value.length);
     autoChangeImage();
   }, 5000);
 })();
