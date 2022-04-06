@@ -1,5 +1,7 @@
 import { CityEnum, DirectionEnum } from '@/enum/area.enum';
 
+type DateTime = string;
+
 interface City {
   key: CityEnum;
   direction: DirectionEnum;

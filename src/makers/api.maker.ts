@@ -2,7 +2,7 @@ import { inject, App } from 'vue';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { MockCb, GetApi } from '@/types/api';
-import { useHomeApi } from '@/apis/spot.api';
+import { useSpotApi } from '@/apis/spot.api';
 
 export const apiProvideKey = Symbol('api');
 
@@ -17,7 +17,7 @@ export function prepareApi(app: App) {
     onMockStack.push(cb);
   };
 
-  const homeApi = useHomeApi(getApi, onMockPusher);
+  const homeApi = useSpotApi(getApi, onMockPusher);
 
   function withMock() {
     mock = new MockAdapter(api, { delayResponse: 1000, onNoMatch: 'throwException' });
