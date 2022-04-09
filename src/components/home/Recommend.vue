@@ -4,17 +4,24 @@ import { useI18n } from 'vue-i18n';
 import { RecommendEnum } from '@/enum/common.enum';
 import { useSpotModule } from '@/modules/spot.module';
 import { useRestaurantModule } from '@/modules/restaurant.module';
+import { useHotelModule } from '@/modules/hotel.module';
+import { Tourism } from '@/types/tourism';
+import { RecommendSpot } from '@/types/spot';
+import { RecommendRestaurant } from '@/types/restaurant';
+import { RecommendHotel } from '@/types/hotel';
 
 const { state: spotState, fetchRecommendSpotList } = useSpotModule();
-const { state: RestaurantState, fetchRecommendRestaurantList } = useRestaurantModule();
+const { state: restaurantState, fetchRecommendRestaurantList } = useRestaurantModule();
+const { state: hotelState, fetchRecommendHotelList } = useHotelModule();
 const recommendSpotList = toRef(spotState, 'recommendSpotList');
-const recommendRestaurantList = toRef(RestaurantState, 'recommendRestaurantList');
+const recommendRestaurantList = toRef(restaurantState, 'recommendRestaurantList');
+const recommendHotelList = toRef(hotelState, 'recommendHotelList');
 
 void fetchRecommendSpotList().then(() => {
   currentRecommendList.value = recommendList[0].list.value;
 });
-
 void fetchRecommendRestaurantList();
+void fetchRecommendHotelList();
 
 const { t } = useI18n();
 
@@ -32,7 +39,7 @@ const recommendList = [
   {
     name: t('common.RecommendHotel'),
     key: RecommendEnum.Hotel,
-    list: recommendSpotList
+    list: recommendHotelList
   }
 ];
 
@@ -42,6 +49,19 @@ const currentRecommendList = shallowRef(recommendList[0].list.value);
 function changeRecommend(key: RecommendEnum) {
   currentRecommendKey.value = key;
   currentRecommendList.value = recommendList.find(recommend => recommend.key === currentRecommendKey.value)?.list.value ?? [];
+}
+
+function recommendItemName(item: Tourism) {
+  switch (currentRecommendKey.value) {
+    case RecommendEnum.Spot:
+      return (item as RecommendSpot).ScenicSpotName;
+    case RecommendEnum.Restaurant:
+      return (item as RecommendRestaurant).RestaurantName;
+    case RecommendEnum.Hotel:
+      return (item as RecommendHotel).HotelName;
+    default:
+      return '';
+  }
 }
 
 </script>
@@ -80,9 +100,9 @@ function changeRecommend(key: RecommendEnum) {
         >
           <img
             :src="item.Picture.PictureUrl1"
-            :alt="item.ScenicSpotName"
+            :alt="recommendItemName(item)"
             rad
-            class="bg-cover bg-center w-[120px] md:w-[150px] lg:w-[180px] h-auto rounded-lg"
+            class="bg-cover bg-center w-[120px] md:w-[150px] lg:w-[180px] h-[80px] md:h-[100px] lg:h-[120px] rounded-lg"
           >
         </div>
       </div>

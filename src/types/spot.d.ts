@@ -14,6 +14,7 @@ interface Spot extends Tourism {
   TicketInfo?: string;
   Remarks?: string;
   Keyword?: string;
+  OpenTime: string;
 }
 
 type SpotRes = Spot[];

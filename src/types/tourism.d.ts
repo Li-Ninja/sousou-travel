@@ -21,7 +21,6 @@ interface Tourism {
   Address?: string;
   ZipCode?: string;
   City?: string;
-  OpenTime: string;
   WebsiteUrl?: string;
   Picture: Picture | Record<string, unknown>;
   Position: Position;
