@@ -3,14 +3,18 @@ import { shallowRef, toRef } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { RecommendEnum } from '@/enum/common.enum';
 import { useSpotModule } from '@/modules/spot.module';
+import { useRestaurantModule } from '@/modules/restaurant.module';
 
-const { state, fetchRecommendSpotList } = useSpotModule();
-
-const recommendSpotList = toRef(state, 'recommendSpotList');
+const { state: spotState, fetchRecommendSpotList } = useSpotModule();
+const { state: RestaurantState, fetchRecommendRestaurantList } = useRestaurantModule();
+const recommendSpotList = toRef(spotState, 'recommendSpotList');
+const recommendRestaurantList = toRef(RestaurantState, 'recommendRestaurantList');
 
 void fetchRecommendSpotList().then(() => {
   currentRecommendList.value = recommendList[0].list.value;
 });
+
+void fetchRecommendRestaurantList();
 
 const { t } = useI18n();
 
@@ -23,7 +27,7 @@ const recommendList = [
   {
     name: t('common.RecommendRestaurant'),
     key: RecommendEnum.Restaurant,
-    list: recommendSpotList
+    list: recommendRestaurantList
   },
   {
     name: t('common.RecommendHotel'),

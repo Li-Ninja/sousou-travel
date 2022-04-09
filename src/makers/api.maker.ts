@@ -3,6 +3,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { MockCb, GetApi } from '@/types/api';
 import { useSpotApi } from '@/apis/spot.api';
+import { useRestaurantApi } from '@/apis/restaurant.api';
 
 export const apiProvideKey = Symbol('api');
 
@@ -18,6 +19,7 @@ export function prepareApi(app: App) {
   };
 
   const homeApi = useSpotApi(getApi, onMockPusher);
+  const restaurantApi = useRestaurantApi(getApi, onMockPusher);
 
   function withMock() {
     mock = new MockAdapter(api, { delayResponse: 1000, onNoMatch: 'throwException' });
@@ -44,6 +46,7 @@ export function prepareApi(app: App) {
     mock,
     provideKey: apiProvideKey,
     ...homeApi,
+    ...restaurantApi,
     withMock
   };
 
