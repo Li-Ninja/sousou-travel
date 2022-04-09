@@ -4,9 +4,9 @@ import { useI18n } from 'vue-i18n';
 import { RecommendEnum } from '@/enum/common.enum';
 import { useSpotModule } from '@/modules/spot.module';
 
-const { getter, fetchRecommendSpotList } = useSpotModule();
+const { state, fetchRecommendSpotList } = useSpotModule();
 
-const recommendSpotList = toRef(getter, 'recommendSpotList');
+const recommendSpotList = toRef(state, 'recommendSpotList');
 
 void fetchRecommendSpotList().then(() => {
   currentRecommendList.value = recommendList[0].list.value;

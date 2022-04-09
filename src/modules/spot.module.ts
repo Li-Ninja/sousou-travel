@@ -1,6 +1,6 @@
-import { computed, readonly, shallowReactive, shallowRef } from 'vue';
+import { readonly, shallowReactive, shallowRef } from 'vue';
 import { useApi } from '@/makers/api.maker';
-import { Picture, RecommendSpot, SpotRes } from '@/types/spot';
+import { RecommendSpot } from '@/types/spot';
 
 let instance: ReturnType<typeof prepareModule> | undefined = undefined;
 let useApiInstance: ReturnType<typeof useApi>;
@@ -16,48 +16,23 @@ export function useSpotModule() {
 function prepareModule() {
   // state
   const state = shallowReactive({
-    spotList: shallowRef<SpotRes>([])
+    recommendSpotList: shallowRef<RecommendSpot[]>([])
   });
   // getter
   const getter = shallowReactive(useGetter());
 
   function useGetter() {
     // computed or array find data
-    const recommendSpotList = computed(() => {
-      const list: RecommendSpot[] = [];
 
-      state.spotList.value.forEach(spot => {
-        if (spot.ScenicSpotName && spot.Picture && spot.Picture.PictureUrl1) {
-          const obj = {
-            ...spot,
-            Picture: spot.Picture as Picture
-          };
-
-          list.push(obj);
-        }
-      });
-
-      if (list.length < 6) {
-        setTimeout(() => {
-          void fetchRecommendSpotList();
-        }, 1000);
-
-        return list.slice(0, list.length);
-      }
-
-      return list.slice(0, 6);
-    });
-
-    return {
-      recommendSpotList
-    };
+    return {};
   }
 
   async function fetchRecommendSpotList() {
     const params = {
-      $top: 20,
+      $top: 6,
       // random fetch, there are about 5190 items in spot list
-      $skip: Math.floor(Math.random() * 5000)
+      $skip: Math.floor(Math.random() * 5000),
+      $filter: 'Picture/PictureUrl1 ne null'
     };
     const data = await useApiInstance.getSpotList(params);
 
@@ -67,7 +42,7 @@ function prepareModule() {
       return;
     }
 
-    state.spotList.value = data;
+    state.recommendSpotList.value = data.slice(0, data.length > 6 ? 6 : data.length) as RecommendSpot[];
   }
 
   return {
