@@ -64,6 +64,10 @@ function recommendItemName(item: Tourism) {
   }
 }
 
+function useDefaultImage(event: Event) {
+  (event.target as HTMLImageElement).src = 'src/assets/non-pic.svg';
+}
+
 </script>
 
 <template>
@@ -103,6 +107,7 @@ function recommendItemName(item: Tourism) {
             :alt="recommendItemName(item)"
             rad
             class="bg-cover bg-center w-[120px] md:w-[150px] lg:w-[180px] h-[80px] md:h-[100px] lg:h-[120px] rounded-lg"
+            @error="useDefaultImage"
           >
         </div>
       </div>

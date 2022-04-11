@@ -10,6 +10,6 @@ const app = createApp(App)
   .use(i18n);
 
 // can use .withMock() to get fake data
-prepareApi(app);
+prepareApi(app).withMock();
 
 app.mount('#app');

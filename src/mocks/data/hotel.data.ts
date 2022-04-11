@@ -117,25 +117,6 @@ export default [
     UpdateTime: '2022-04-09T02:04:29+08:00'
   },
   {
-    HotelID: 'C4_315080000H_000692',
-    HotelName: '麓司岸民宿',
-    Address: '南投縣魚池鄉東池村文武巷19-16號',
-    ZipCode: '555',
-    Phone: '886-982-726451',
-    Fax: '886--',
-    Picture: {},
-    Position: {
-      PositionLon: 120.94026947021484,
-      PositionLat: 23.89274787902832,
-      GeoHash: 'wsnpbjd12'
-    },
-    Class: '民宿',
-    ParkingInfo: '車位:小客車0輛、機車0輛、大客車0輛',
-    City: '南投縣',
-    SrcUpdateTime: '2022-04-09T01:20:07+08:00',
-    UpdateTime: '2022-04-09T02:04:29+08:00'
-  },
-  {
     HotelID: 'C4_315080000H_000694',
     HotelName: '保記茶工房民宿',
     Description: '位於南投縣的民宿',
