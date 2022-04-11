@@ -3,8 +3,13 @@ import App from './App.vue';
 import router from './router';
 import './index.css';
 import { i18n } from '@/makers/i18n.maker';
+import { prepareApi } from '@/makers/api.maker';
 
-createApp(App)
+const app = createApp(App)
   .use(router)
-  .use(i18n)
-  .mount('#app');
+  .use(i18n);
+
+// can use .withMock() to get fake data
+prepareApi(app).withMock();
+
+app.mount('#app');
